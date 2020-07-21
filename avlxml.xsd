@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-NB: Dokumentasjon på http://www.arkivverket.no/standarder/avlxml
+NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
 -->
-<xs:schema xmlns="http://www.arkivverket.no/standarder/avlxml" 
+<xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.arkivverket.no/standarder/avlxml"
-           xmlns:avlmdk="http://www.arkivverket.no/standarder/avlxml/avlxml-mdk"
-           xmlns:avlsup="http://www.arkivverket.no/standarder/avlxml/avlsup" elementFormDefault="qualified">
+           targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml"
+           xmlns:avlmdk="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
+           xmlns:avlsup="http://www.arkivverket.no/standarder/nha/avlxml/avlsup" elementFormDefault="qualified">
 
-  <xs:import namespace="http://www.arkivverket.no/standarder/avlxml/avlxml-mdk"
+  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
     schemaLocation="avlxml-mdk.xsd"/>
-  <xs:import namespace="http://www.arkivverket.no/standarder/avlxml/avlsup" schemaLocation="avlsup.xsd"/>
+  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup" schemaLocation="avlsup.xsd"/>
 
   <xs:element name="avlxml" type="avlevering"/>
 
