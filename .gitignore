@@ -1,0 +1,5 @@
+# Ignore oXygen project files:
+*.xpr
+
+# Ignore test-avls
+avlxml*.xml
