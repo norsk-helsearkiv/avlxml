@@ -2,9 +2,21 @@
 AVLXML 
 
 XML-skjema for avleveringsliste til Norsk helsearkiv
-https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysiske-arkiver-avleveringsliste
+https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysisk-materiale
 
-******************************************************************************** 
+********************************************************************************
+2020-12-08 - AVLXML V3 er publisert (areant)
+
+Endringer fra forrige versjon:
+------------------------------------------------------
+| Ref  | Endring                                     |
+| P-13 | Førstekontakt er gjort obligatorisk         |
+| P-14 | Sistekontakt er gjort obligatorisk          |
+| P-03 | Arkivskaper er kommet inn på pasientjournal | 
+| A-04 | Generertdato er kommet inn på avlevering    |
+------------------------------------------------------
+
+********************************************************************************
 2018-10-04 - Opprettet (jengle)
 
 avlxml-mdk.xsd - Skjema for metadatakatalog - grunnleggende opplysninger
