@@ -83,7 +83,8 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element minOccurs="0" name="merknad" type="avlmdk:merknad"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="diagnose" type="diagnose"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="lagringsenhet" type="avlmdk:lagringsenhet"/>
-      <xs:element minOccurs="0" name="supplerendeopplysninger" type="avlsup:supplerendeopplysninger"/>
+      <!-- Fjernet i v4. Supplerende opplysninger skal ligge en egen fil definert i EPJARK-standarden -->
+      <!--xs:element minOccurs="0" name="supplerendeopplysninger" type="avlsup:supplerendeopplysninger"/-->
     </xs:sequence>
   </xs:complexType>
   
