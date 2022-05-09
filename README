@@ -6,6 +6,8 @@ https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysisk-material
 
 ********************************************************************************
 2022-05-09 - AVLXML V4 Draft er publisert (areant)
+https://github.com/norsk-helsearkiv/avlxml/tree/avlxml-v4-draft
+
 Store endringer i avlsup. Supplerende opplysninger beskriver nå hvert enkelt
 dokument i avleveringen i stedet for å ligge under journal i avlxml.
 
