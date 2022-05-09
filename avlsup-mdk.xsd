@@ -192,7 +192,7 @@
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
   
-  <xs:simpleType name="henvisningspeirodeStartdato">
+  <xs:simpleType name="henvisningsperiodeStartdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.50</xs:documentation>
       <xs:documentation>Dato henvisningsperioden startet</xs:documentation>
@@ -200,7 +200,7 @@
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
   
-  <xs:simpleType name="henvisningspeirodeSluttdato">
+  <xs:simpleType name="henvisningsperiodeSluttdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.51</xs:documentation>
       <xs:documentation>Dato henvisningsperioden sluttet</xs:documentation>

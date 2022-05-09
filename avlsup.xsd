@@ -138,8 +138,8 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="henvisningsperiodeId" type="supmdk:henvisningsperiodeId"/>
-      <xs:element name="henvisningspeirodeStartdato" type="supmdk:henvisningspeirodeStartdato"/>
-      <xs:element name="henvisningspeirodeSluttdato" type="supmdk:henvisningspeirodeSluttdato"/>
+      <xs:element name="henvisningsperiodeStartdato" type="supmdk:henvisningsperiodeStartdato"/>
+      <xs:element name="henvisningsperiodeSluttdato" type="supmdk:henvisningsperiodeSluttdato"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -149,7 +149,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="behandlendeAvdelingReshId" type="supmdk:behandlendeAvdelingReshID"/>
-      <xs:element name="behandlendeavdelingNavn" type="supmdk:behandlendeAvdelingNavn"/>
+      <xs:element name="behandlendeAvdelingNavn" type="supmdk:behandlendeAvdelingNavn"/>
     </xs:sequence>
   </xs:complexType>
 
