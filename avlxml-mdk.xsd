@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
-  elementFormDefault="qualified">
+<xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk" 
+	   xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk" elementFormDefault="qualified">
 
   <!-- 
 ********************************************************************************    
@@ -32,8 +30,10 @@
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.3</xs:documentation>
       <xs:documentation>Unik identifikator som identifiserer den enkelte arkivavlevering. </xs:documentation>
-      <xs:documentation>Merk: Avleveringsidentifikator fastsettes av NHA i den avtalen som inngås
-        mellom arkivskaper og arkivdepot i forbindelse med en avlevering.</xs:documentation>
+      <xs:documentation>
+        Merk: Avleveringsidentifikator fastsettes av NHA i den avtalen som inngås mellom 
+        arkivskaper og arkivdepot i forbindelse med en avlevering.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="([0-9]+.)+([0-9]+)"/>
@@ -53,9 +53,10 @@
   <xs:simpleType name="avtalebeskrivelse">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.5</xs:documentation>
-      <xs:documentation>Tekstlig beskrivelse av den aktuelle avtalen. Typisk innhold vil være kort
-        beskrivelse av virksomheten og hvilket arkiv, omfang og periode avtalen skal
-        omfatte.</xs:documentation>
+      <xs:documentation>
+        Tekstlig beskrivelse av den aktuelle avtalen. Typisk innhold vil være kort beskrivelse av 
+        virksomheten og hvilket arkiv, omfang og periode avtalen skal omfatte.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -71,8 +72,10 @@
   <xs:simpleType name="avtaleidentifikator">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.7</xs:documentation>
-      <xs:documentation>En unik identifikator som identifiserer den enkelte avleveringsavtale.
-        Tildeles av arkivdepotet ved avtaleinngåelse med arkivskaper.</xs:documentation>
+      <xs:documentation>
+        En unik identifikator som identifiserer den enkelte avleveringsavtale. Tildeles av 
+        arkivdepotet ved avtaleinngåelse med arkivskaper.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="([0-9]+.)+([0-9]+)"/>
@@ -98,8 +101,10 @@
   <xs:simpleType name="diagnosetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.10</xs:documentation>
-      <xs:documentation> Benyttes i de tilfeller der men ikke har diagnosekode. Kan også benyttes
-        til supplerende tekst. </xs:documentation>
+      <xs:documentation>
+        Benyttes i de tilfeller der men ikke har diagnosekode. 
+        Kan også benyttes til supplerende tekst.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -107,8 +112,10 @@
   <xs:simpleType name="diagnosekodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.11</xs:documentation>
-      <xs:documentation>Angivelse av hvilket diagnosekodeverk som diagnosekoden er hentet fra, ref.
-        kravspesifikasjon.</xs:documentation>
+      <xs:documentation>
+        Angivelse av hvilket diagnosekodeverk som diagnosekoden er hentet fra, 
+        ref. kravspesifikasjon.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="(0|([0-9]+.)+([0-9]+))"/>
@@ -118,8 +125,10 @@
   <xs:simpleType name="fanearkidentifikator">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.12 </xs:documentation>
-      <xs:documentation>Dersom det er gjort avtale om innlegg av faneark i pasientjournaler med
-        sikte på digitalisering, skal denne identifikatoren registreres</xs:documentation>
+      <xs:documentation>
+        Dersom det er gjort avtale om innlegg av faneark i pasientjournaler med sikte på 
+        digitalisering, skal denne identifikatoren registreres
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -127,9 +136,10 @@
   <xs:simpleType name="fodselsnummer">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.13</xs:documentation>
-      <xs:documentation>Pasientidentifiserende opplysninger; fødselsnummer eller annet entydig
-        identifikasjonsnummer, eventuelle virksomhetsinterne pasientnummer eller hjelpenummer
-        mv.</xs:documentation>
+      <xs:documentation>
+        Pasientidentifiserende opplysninger; fødselsnummer eller annet entydig 
+        identifikasjonsnummer, eventuelle virksomhetsinterne pasientnummer eller hjelpenummer mv.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -182,9 +192,10 @@
   <xs:simpleType name="lagringsenhet">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.19</xs:documentation>
-      <xs:documentation>En kodet verdi som identifiserer den aktuelle lagringsenhet som inneholder
-        pasientjournalen. (Kan gjentas dersom journalen er så stor at den finnes i flere
-        lagringsenheter)</xs:documentation>
+      <xs:documentation>
+        En kodet verdi som identifiserer den aktuelle lagringsenhet som inneholder pasientjournalen. 
+        (Kan gjentas dersom journalen er så stor at den finnes i flere lagringsenheter)
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -201,8 +212,10 @@
   <xs:simpleType name="merknad">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.21</xs:documentation>
-      <xs:documentation>Felt for registrering av fritekstmerknad dersom brukeren har behov for å
-        knytte en beskrivende anmerkning til journalavleveringen.</xs:documentation>
+      <xs:documentation>
+        Felt for registrering av fritekstmerknad dersom brukeren har behov for å knytte en 
+        beskrivende anmerkning til journalavleveringen.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -226,8 +239,9 @@
   <xs:simpleType name="sikkermors">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.24</xs:documentation>
-      <xs:documentation> Angir om dødsdato/år er ukjent. Verdi "true" uttrykker sant (ja, avkrysset
-        boks etc.) mens verdi "false" uttrykker usant (verdi nei, ikke avkrysset boks etc.).
+      <xs:documentation>
+        Angir om dødsdato/år er ukjent. 
+        Verdi "true" uttrykker sant (ja, avkrysset boks etc.) mens verdi "false" uttrykker usant (verdi nei, ikke avkrysset boks etc.).
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:boolean"/>
@@ -244,8 +258,9 @@
   <xs:simpleType name="virksomhetsnavn">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.26</xs:documentation>
-      <xs:documentation>Navnet på den virksomheten som forestår avleveringen. Dette kan være
-        forskjellig fra navnet på arkivskaper.</xs:documentation>
+      <xs:documentation>
+        Navnet på den virksomheten som forestår avleveringen. Dette kan være forskjellig fra navnet på arkivskaper.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
@@ -266,6 +281,14 @@
     <xs:restriction base="xs:string">
       <xs:pattern value="\d{9}"/>
     </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="generertdato">
+    <xs:annotation>
+      <xs:documentation>OID:2.16.578.1.39.100.1.3001.29</xs:documentation>
+      <xs:documentation>Den dato avleveringslisten ble generert</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="arkDATO" />
   </xs:simpleType>
 
   <xs:simpleType name="arkDATO">

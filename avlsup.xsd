@@ -15,151 +15,141 @@
 
   <xs:complexType name="supplerendeopplysninger">
     <xs:annotation>
-      <xs:documentation>supplerende opplysninger hentet fra elektronisk PAS, EPJ eller annet
-        registratur</xs:documentation>
+      <xs:documentation>
+        Supplerende opplysninger hentet fra elektronisk PAS, EPJ eller annet registratur
+      </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="avleveringsidentifikator" type="avlmdk:avleveringsidentifikator"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dokument" type="dokument"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dokument">
+    <xs:annotation>
+      <xs:documentation>
+        For hver pasient etableres det en fil med supplerende opplysninger per dokument. Hvert 
+        dokument kobles til pasientjournalen ved hjelp av journalidentifikatoren som er benyttet 
+        for pasienten.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="dokumentidentifikator" type="supmdk:dokumentidentifikator"/>
       <xs:element name="journalidentifikator" type="avlmdk:journalidentifikator"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="saksreferanser" type="saksreferanser"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="henvisningsperiode"
-        type="henvisningsperiode"/>
+      <xs:element name="filsti" type="supmdk:filsti"/>
+      <xs:element name="dokumenttype" type="dokumenttype"/>
+      <xs:element name="dokumentdato" type="supmdk:dokumentdato"/>
+      <xs:element maxOccurs="unbounded" name="Organisasjon" type="Organisasjon"/>
+      <xs:element minOccurs="0" name="episode" type="episode"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="diagnose" type="diagnose"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="prosedyre" type="prosedyre"/>
+      <xs:element minOccurs="0" name="henvisningsperiode" type="henvisningsperiode"/>
+      <xs:element name="behandlendeAvdeling" type="behandlendeAvdeling"/>
+      <xs:element minOccurs="0" name="saksnummer" type="supmdk:saksnummer"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="saksreferanser">
+
+  <xs:complexType name="dokumenttype">
     <xs:annotation>
-      <xs:documentation>Denne klassen beskriver henvisninger mellom pasientarkiv og relevante
-        administrative saker i sakarkiv.</xs:documentation>
+      <xs:documentation>Dokumenttype</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="saksereferansedato" type="supmdk:saksreferansedato"/>
-      <xs:element minOccurs="0" name="saksreferansenummer" type="supmdk:saksreferansenummer"/>
-      <xs:element name="saksreferansetekst" type="supmdk:saksreferansetekst"/>
+      <xs:element name="dokumenttypeKode" type="supmdk:dokumenttypeKode"/>
+      <xs:element name="dokumenttypeTekst" type="supmdk:dokumenttypeTekst"/>
+      <xs:element name="dokumenttypeKodeverk" type="supmdk:dokumenttypeKodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="henvisningsperiode">
+  <xs:complexType name="Organisasjon">
     <xs:annotation>
-      <xs:documentation>Denne klassen beskriver tidsperioder fra mottak av henvisning for en og
-        samme lidelse til utredning, behandling, rehabilitering og oppfølging er gjennomført, og
-        ingen nye kontakter er avtalt.</xs:documentation>
+      <xs:documentation>Informasjon om organisasjonen(e) som har lagt inn informasjon i dokumentet.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="henvFraInstitusjonID" type="supmdk:henvFraInstitusjonID"/>
-      <xs:element minOccurs="0" name="ansienDato" type="supmdk:ansienDato"/>
-      <xs:element minOccurs="0" name="trygdenasjon" type="supmdk:trygdenasjon"/>
-      <xs:element minOccurs="0" name="sluttDato" type="supmdk:sluttDato"/>
-      <xs:element minOccurs="0" name="henvTilInstitusjonID" type="supmdk:henvTilInstitusjonID"/>
-      <xs:choice maxOccurs="unbounded" minOccurs="0">
-        <xs:element name="avdelingsopphold" type="avdelingsopphold"/>
-        <xs:element name="kontakt" type="kontakt"/>
-      </xs:choice>
+      <xs:element name="organisasjonNummer" type="avlmdk:organisasjonsnummer"/>
+      <xs:element name="organisasjonNavn" type="avlmdk:foretaksnavn"/>
     </xs:sequence>
-    <xs:attribute name="henvisningsperiodeID" type="supmdk:henvisningsperiodeID" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="episode">
     <xs:annotation>
-      <xs:documentation>Denne abstrakte klassen beskriver tidsperioder hvor pasienten får helsehjelp
-        ved én og samme helseinstitusjon for ett og samme helseproblem.</xs:documentation>
+      <xs:documentation>Angis for dokumenter som er tilknyttet en episode.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="innDatoTid" type="supmdk:innDatoTid"/>
-      <xs:element minOccurs="0" name="utDatoTid" type="supmdk:utDatoTid"/>
-      <xs:element name="episodeFag" type="supmdk:episodeFag"/>
-      <xs:element name="omsorgsniva" type="supmdk:omsorgsniva"/>
-      <xs:element name="komNrHjem" type="supmdk:komNrHjem"/>
-      <xs:element minOccurs="0" name="bydel" type="supmdk:bydel"/>
-      <xs:element minOccurs="0" name="adresse" type="supmdk:adresse"/>
-      <xs:element name="tjeneste" type="tjeneste"/>
-    </xs:sequence>
-    <xs:attribute name="episodeID" type="supmdk:episodeID" use="required"/>
-    <xs:attribute name="serieID" type="supmdk:serieID"/>
-  </xs:complexType>
-
-  <xs:complexType name="avdelingsopphold">
-    <xs:annotation>
-      <xs:documentation>Denne klassen beskriver den sammenhengende tidsperiode med innleggelse ved
-        samme avdeling for en pasient.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="episode">
-        <xs:sequence>
-          <xs:element name="oppholdstype" type="supmdk:oppholdstype"/>
-          <xs:element name="avdoppAktivitet" type="supmdk:avdoppAktivitet"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="kontakt">
-    <xs:annotation>
-      <xs:documentation>Denne klassen beskriver den uavbrutte samhandling mellom pasient og
-        helsepersonell hvor det utføres helsehjelp for pasienten eller indirekte
-        kontakt.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="episode">
-        <xs:sequence>
-          <xs:element name="kontakttype" type="supmdk:kontakttype"/>
-          <xs:element name="stedAktivitet" type="supmdk:stedAktivitet"/>
-          <xs:element name="polkonAktivitet" type="supmdk:polkonAktivitet"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="tjenesteenhet">
-    <xs:annotation>
-      <xs:documentation>Denne klassen beskriver den organisatorisk enhet ved en helseinstitusjon
-        eller et selvstendig foretak (eks avtalespesialist) uten organisatoriske
-        inndelinger.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="enhetID" type="supmdk:enhetID"/>
-      <xs:element minOccurs="0" name="enhetNavn" type="supmdk:enhetNavn"/>
-      <xs:element minOccurs="0" name="offAvdKode" type="supmdk:offAvdKode"/>
-      <xs:element minOccurs="0" name="reshID" type="supmdk:reshID"/>
-      <xs:element minOccurs="0" name="enhetLokal" type="supmdk:enhetLokal"/>
+      <xs:element name="episodeId" type="supmdk:episodeID"/>
+      <xs:element name="episodeStartdato" type="supmdk:episodeStartdato"/>
+      <xs:element name="episodeSluttdato" type="supmdk:episodeStartdato"/>
+      <xs:element name="omsorgsniva" type="omsorgsniva"/>
+      <xs:element name="fagomrade" type="fagomrade"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="tiltak">
+  <xs:complexType name="omsorgsniva">
     <xs:annotation>
-      <xs:documentation>Denne klassen beskriver et tiltak i en tjeneste. Et tiltak kan inneholde
-        flere forekomster av klassen Prosedyre.</xs:documentation>
+      <xs:documentation>
+        Omsorgsnivå på episoden. Omsorgsnivået angir om behandlingen har vært poliklinisk eller innleggelse.      </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" name="typeTiltak" type="supmdk:typeTiltak"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="prosedyre" type="prosedyre"/>
+      <xs:element name="omsorgsnivaKode" type="supmdk:omsorgsnivaKode"/>
+      <xs:element name="omsorgsnivaKodetekst" type="supmdk:omsorgsnivaKodetekst"/>
+      <xs:element name="omsorgsnivaKodeverk" type="supmdk:omsorgsnivaKodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="tjeneste">
+  <xs:complexType name="fagomrade">
     <xs:annotation>
-      <xs:documentation>Denne klassen beskriver en eller flere behandlingsrettede tiltak som utføres
-        for en pasient under en og samme tjeneste (seanse).</xs:documentation>
+      <xs:documentation>
+        Fagområde på episoden
+      </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="instID" type="supmdk:instID"/>
-      <xs:element name="startDatoTid" type="supmdk:startDatoTid"/>
-      <xs:element minOccurs="0" name="sluttDatoTid" type="supmdk:sluttDatoTid"/>
-      <xs:element name="tjenesteFag" type="supmdk:tjenesteFag"/>
-      <xs:element minOccurs="0" name="enhet" type="tjenesteenhet"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiltak" type="tiltak"/>
+      <xs:element name="fagomradeKode" type="supmdk:fagomradeKode"/>
+      <xs:element name="fagomradeKodetekst" type="supmdk:fagomradeKodetekst"/>
+      <xs:element name="fagomradeKodeverk" type="supmdk:fagomradeKodeverk"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="diagnose">
+    <xs:annotation>
+      <xs:documentation>Diagnosene som har blitt stilt i forbindelse med en episode angis for dokumenter som er knyttet til denne episoden.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="diagnosedato" type="avlmdk:diagnosedato"/>
+      <xs:element name="diagnosekode" type="avlmdk:diagnosekode"/>
+      <xs:element name="diagnosetekst" type="avlmdk:diagnosetekst"/>
+      <xs:element name="diagnosekodeverk" type="avlmdk:diagnosekodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="prosedyre">
     <xs:annotation>
-      <xs:documentation>Denne klassen beskriver de pasientrettet tiltak kategorisert etter en
-        normgivende beskrivelse eller et kodeverk. En prosedyre kan bestå av flere deler som hver
-        beskrives med en kode eller tekst</xs:documentation>
+      <xs:documentation>Prosedyre(ne) som har blitt gjennomført i forbindelse med en episode angis for dokumenter som er knyttet til denne episoden.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="prosNr" type="supmdk:prosNr"/>
-      <xs:element maxOccurs="unbounded" name="Prosedyrekode" type="supmdk:Prosedyrekode"/>
+      <xs:element name="prosedyreKode" type="supmdk:prosedyreKode"/>
+      <xs:element name="prosedyreKodetekst" type="supmdk:prosedyreKodetekst"/>
+      <xs:element name="prosedyreKodeverk" type="supmdk:prosedyreKodeverk"/>
+      <xs:element name="prosedyreDato" type="supmdk:prosedyreDato"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="henvisningsperiode">
+    <xs:annotation>
+      <xs:documentation>For dokumenter knyttet til en episode skal henvisningsperiode angis.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="henvisningsperiodeId" type="supmdk:henvisningsperiodeId"/>
+      <xs:element name="henvisningspeirodeStartdato" type="supmdk:henvisningspeirodeStartdato"/>
+      <xs:element name="henvisningspeirodeSluttdato" type="supmdk:henvisningspeirodeSluttdato"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="behandlendeAvdeling">
+    <xs:annotation>
+      <xs:documentation>Informasjon om avdelingen som behandlet pasienten.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="behandlendeAvdelingReshId" type="supmdk:behandlendeAvdelingReshID"/>
+      <xs:element name="behandlendeavdelingNavn" type="supmdk:behandlendeAvdelingNavn"/>
     </xs:sequence>
   </xs:complexType>
 

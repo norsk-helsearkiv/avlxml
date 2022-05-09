@@ -3,16 +3,12 @@
 NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
 -->
 <xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml"
   xmlns:avlmdk="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
-  xmlns:avlsup="http://www.arkivverket.no/standarder/nha/avlxml/avlsup"
-  elementFormDefault="qualified">
+  xmlns:avlsup="http://www.arkivverket.no/standarder/nha/avlxml/avlsup" elementFormDefault="qualified">
 
-  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
-    schemaLocation="avlxml-mdk.xsd"/>
-  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup"
-    schemaLocation="avlsup.xsd"/>
+  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk" schemaLocation="avlxml-mdk.xsd"/>
+  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup" schemaLocation="avlsup.xsd"/>
 
   <xs:element name="avlxml" type="avlevering"/>
 
@@ -24,7 +20,7 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element name="avlxmlversjon" type="avlmdk:avlxmlversjon"/>
       <xs:element name="avleveringsidentifikator" type="avlmdk:avleveringsidentifikator"/>
       <xs:element name="avleveringsbeskrivelse" type="avlmdk:avleveringsbeskrivelse"/>
-      <xs:element minOccurs="0" name="generertdato" type="avlmdk:arkDATO"/>
+      <xs:element minOccurs="0" name="generertdato" type="avlmdk:generertdato"/>
       <xs:element name="arkivskaper" type="avlmdk:arkivskaper"/>
       <xs:element name="avtale" type="avtale"/>
       <xs:element maxOccurs="unbounded" name="pasientjournal" type="pasientjournal"/>
@@ -59,10 +55,10 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:documentation>Diagnoser tilknyttet pasientjournal</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" name="diagnosedato" type="avlmdk:diagnosedato"/>
+      <xs:element name="diagnosedato" type="avlmdk:diagnosedato"/>
       <xs:element minOccurs="0" name="diagnosekode" type="avlmdk:diagnosekode"/>
       <xs:element name="diagnosetekst" type="avlmdk:diagnosetekst"/>
-      <xs:element minOccurs="0" name="diagnosekodeverk" type="avlmdk:diagnosekodeverk"/>
+      <xs:element name="diagnosekodeverk" type="avlmdk:diagnosekodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -86,11 +82,9 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element minOccurs="1" name="sistekontakt" type="avlmdk:sistekontakt"/>
       <xs:element minOccurs="0" name="merknad" type="avlmdk:merknad"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="diagnose" type="diagnose"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="lagringsenhet"
-        type="avlmdk:lagringsenhet"/>
-      <xs:element minOccurs="0" name="supplerendeopplysninger" type="avlsup:supplerendeopplysninger"
-      />
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="lagringsenhet" type="avlmdk:lagringsenhet"/>
+      <xs:element minOccurs="0" name="supplerendeopplysninger" type="avlsup:supplerendeopplysninger"/>
     </xs:sequence>
   </xs:complexType>
-
+  
 </xs:schema>
