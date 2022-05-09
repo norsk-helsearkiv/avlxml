@@ -5,16 +5,12 @@ XML-skjema for avleveringsliste til Norsk helsearkiv
 https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysisk-materiale
 
 ********************************************************************************
-2020-12-08 - AVLXML V3 draft er publisert (areant)
-Det jobbes med store endringer rundt avlsup.
+2022-05-09 - AVLXML V4 Draft er publisert (areant)
+Store endringer i avlsup. Supplerende opplysninger beskriver nå hvert enkelt
+dokument i avleveringen i stedet for å ligge under journal i avlxml.
 
-I branch avlxml-v3-draft-alt1 generaliseres registrering av koder og kodeverk i to
-typer, arkKode og arkKodeDato, som brukes som base for flere elementer.
-
-I branch avlxml-v3-draft-alt2 flates strukturen ut og det er laget egne typer for
-hver enkelt XML-element.
-
-Se ny mappa for dokumentasjon og eksempelfiler.
+Supplerende opplysninger kan videre kun leveres som én fil per journal, som 
+definert i EPJARK standarden.
 
 ********************************************************************************
 2020-12-08 - AVLXML V3 er publisert (areant)
