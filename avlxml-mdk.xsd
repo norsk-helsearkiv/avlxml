@@ -291,6 +291,17 @@
     <xs:restriction base="arkDATO" />
   </xs:simpleType>
 
+  <xs:simpleType name="spesialisthelsetjeneste">
+    <xs:annotation>
+      <xs:documentation>OID:2.16.578.1.39.100.1.3001.55</xs:documentation>
+      <xs:documentation>
+        Dette er en tilpasning for Nasjonal ordning 
+        Angir om behandler er del av spesialisthelsetjenesten og omfattet av helsearkivforskrifta eller ikke
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean"/>
+  </xs:simpleType>
+
   <xs:simpleType name="arkDATO">
     <xs:annotation>
       <xs:documentation>Generelt datoformat</xs:documentation>

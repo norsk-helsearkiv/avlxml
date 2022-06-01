@@ -47,6 +47,7 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element name="virksomhetsnavn" type="avlmdk:virksomhetsnavn"/>
       <xs:element minOccurs="0" name="foretaksnavn" type="avlmdk:foretaksnavn"/>
       <xs:element name="organisasjonsnummer" type="avlmdk:organisasjonsnummer"/>
+      <xs:element minOccurs="0" name="spesialisthelsetjeneste" type="avlmdk:spesialisthelsetjeneste"/>
     </xs:sequence>
   </xs:complexType>
 
