@@ -17,7 +17,7 @@
       <xs:documentation>Navnet på den institusjonen som er, eller antas å være
         arkivskaper.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="avleveringsbeskrivelse">
@@ -25,7 +25,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.2</xs:documentation>
       <xs:documentation>utfyllende opplysninger</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="avleveringsidentifikator">
@@ -57,7 +57,7 @@
         beskrivelse av virksomheten og hvilket arkiv, omfang og periode avtalen skal
         omfatte.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="avtaledato">
@@ -92,7 +92,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.9</xs:documentation>
       <xs:documentation>Diagnosekoden slik den er anført i pasientjournalen.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="diagnosetekst">
@@ -101,7 +101,7 @@
       <xs:documentation> Benyttes i de tilfeller der men ikke har diagnosekode. Kan også benyttes
         til supplerende tekst. </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="diagnosekodeverk">
@@ -121,7 +121,7 @@
       <xs:documentation>Dersom det er gjort avtale om innlegg av faneark i pasientjournaler med
         sikte på digitalisering, skal denne identifikatoren registreres</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="fodselsnummer">
@@ -131,7 +131,7 @@
         identifikasjonsnummer, eventuelle virksomhetsinterne pasientnummer eller hjelpenummer
         mv.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="fodtdato">
@@ -155,7 +155,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.16</xs:documentation>
       <xs:documentation>Unik identifikator dersom denne finnes</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="journalnummer">
@@ -164,7 +164,7 @@
       <xs:documentation>Kan benyttes til å registrere journalnummer dersom det finnes,
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="kjonn">
@@ -186,7 +186,7 @@
         pasientjournalen. (Kan gjentas dersom journalen er så stor at den finnes i flere
         lagringsenheter)</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="lopenummer">
@@ -195,7 +195,7 @@
       <xs:documentation>Kan benyttes til å registrere løpenummer dersom det
         finnes.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="merknad">
@@ -204,7 +204,7 @@
       <xs:documentation>Felt for registrering av fritekstmerknad dersom brukeren har behov for å
         knytte en beskrivende anmerkning til journalavleveringen.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="morsdato">
@@ -220,7 +220,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.23</xs:documentation>
       <xs:documentation>Pasientens navn</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="sikkermors">
@@ -247,7 +247,7 @@
       <xs:documentation>Navnet på den virksomheten som forestår avleveringen. Dette kan være
         forskjellig fra navnet på arkivskaper.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string"/>
+    <xs:restriction base="obligTekst"/>
   </xs:simpleType>
 
   <xs:simpleType name="foretaksnavn">
@@ -278,4 +278,14 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="obligTekst">
+    <xs:annotation>
+      <xs:documentation>Generell regel for tekstfelter som ikke skal være tomme</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
 </xs:schema>
