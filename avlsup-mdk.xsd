@@ -24,7 +24,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.30</xs:documentation>
       <xs:documentation>Identifikator for referansen</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="saksreferansetekst">
@@ -32,7 +32,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.31</xs:documentation>
       <xs:documentation>Beskrivelse av referansen</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="henvisningsperiodeID">
@@ -40,7 +40,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.32</xs:documentation>
       <xs:documentation>Unik identifikator for denne henvisningsperioden</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="henvFraInstitusjonID">
@@ -97,7 +97,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.38</xs:documentation>
       <xs:documentation>Unik identifikator for denne episoden. </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="serieID">
@@ -105,7 +105,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.39</xs:documentation>
       <xs:documentation>Knytter sammen flere Episoder til en serie.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:complexType name="episodeFag">
@@ -151,7 +151,7 @@
       <xs:documentation>Folkeregisterets registrering av pasientens hjemstedskommune ved start av
         Episoden.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="bydel">
@@ -160,7 +160,7 @@
       <xs:documentation>Den bydel der Pasienten bor, dersom det er i Oslo, Bergen, Trondheim eller
         Stavanger.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="adresse">
@@ -168,7 +168,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.46</xs:documentation>
       <xs:documentation>Benyttes dersom Folkeregisterkommune mangler</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:complexType name="oppholdstype">
@@ -281,7 +281,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.57</xs:documentation>
       <xs:documentation>Navn på enheten i klartekst</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="offAvdKode">
@@ -289,7 +289,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.58</xs:documentation>
       <xs:documentation>Offisiell avdelingskode (IK 44/89)</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="reshID">
@@ -298,7 +298,7 @@
       <xs:documentation>Enhetens RESH-identifikasjon (Standard kodeverk: 3512 Nasjonalt
         register)</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:simpleType name="enhetLokal">
@@ -306,7 +306,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.60</xs:documentation>
       <xs:documentation>Lokal kode for enhet</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:complexType name="typeTiltak">
@@ -324,7 +324,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.62</xs:documentation>
       <xs:documentation>Rekkefølgenummer</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="obligTekst"/>
+    <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
 
   <xs:complexType name="Prosedyrekode">
@@ -354,7 +354,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="obligTekst">
+  <xs:simpleType name="ikkeTom">
     <xs:annotation>
       <xs:documentation>Generell regel for tekstfelter som ikke skal være tomme</xs:documentation>
     </xs:annotation>
