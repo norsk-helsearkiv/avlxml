@@ -59,7 +59,7 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element name="diagnosedato" type="avlmdk:diagnosedato"/>
       <xs:element minOccurs="0" name="diagnosekode" type="avlmdk:diagnosekode"/>
       <xs:element name="diagnosetekst" type="avlmdk:diagnosetekst"/>
-      <xs:element name="diagnosekodeverk" type="avlmdk:diagnosekodeverk"/>
+      <xs:element minOccurs="0" name="diagnosekodeverk" type="avlmdk:diagnosekodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
