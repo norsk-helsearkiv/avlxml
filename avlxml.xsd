@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-3#" schemaLocation="avlxml-3-0.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk-3#" schemaLocation="avlxml-mdk-3-0.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-4#" schemaLocation="avlxml-4-draft.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk-4#" schemaLocation="avlxml-mdk-4-draft.xsd"/>
+    <!--xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk-3#" schemaLocation="avlxml-mdk-3-0.xsd"/-->
+    <!--xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-4#" schemaLocation="avlxml-4-draft.xsd"/-->
+    <!--xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk-4#" schemaLocation="avlxml-mdk-4-draft.xsd"/-->
 </xs:schema>
