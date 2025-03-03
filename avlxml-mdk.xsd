@@ -14,8 +14,8 @@
   <xs:simpleType name="arkivskaper">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.1</xs:documentation>
-      <xs:documentation>Navnet på den institusjonen som er, eller antas å være
-        arkivskaper.</xs:documentation>
+      <xs:documentation>A-05</xs:documentation>
+      <xs:documentation>Navnet på den behandlende enhet som har, eller antas å ha, skapt arkivet.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -23,7 +23,13 @@
   <xs:simpleType name="avleveringsbeskrivelse">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.2</xs:documentation>
-      <xs:documentation>utfyllende opplysninger</xs:documentation>
+      <xs:documentation>A-03</xs:documentation>
+      <xs:documentation>
+        Tekstlig beskrivelse av den aktuelle avleveringen.
+      </xs:documentation>
+      <xs:documentation>
+        Typisk beskrivelse av serie, periode eller annen avgrensning.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -31,9 +37,13 @@
   <xs:simpleType name="avleveringsidentifikator">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.3</xs:documentation>
-      <xs:documentation>Unik identifikator som identifiserer den enkelte arkivavlevering. </xs:documentation>
-      <xs:documentation>Merk: Avleveringsidentifikator fastsettes av NHA i den avtalen som inngås
-        mellom arkivskaper og arkivdepot i forbindelse med en avlevering.</xs:documentation>
+      <xs:documentation>A-02</xs:documentation>
+      <xs:documentation>
+        En unik identifikator tildelt av Norsk helsearkiv ved inngåelse av avtale om avlevering. (OID-format)
+      </xs:documentation>
+      <xs:documentation>
+        Siden en avtale kan beskrive flere uavhengige avleveringer, er denne ikke den samme som avtaleidentifikatoren.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="([0-9]+.)+([0-9]+)|inc[0-9]+"/>
@@ -43,7 +53,13 @@
   <xs:simpleType name="avlxmlversjon">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.4</xs:documentation>
-      <xs:documentation>Verson i henhold til spesifikasjon.</xs:documentation>
+      <xs:documentation>A-01</xs:documentation>
+      <xs:documentation>
+        Spesifikasjonens versjonsnummer uttrykt i OID-formatet.
+      </xs:documentation>
+      <xs:documentation>
+        Avleveringer som følger denne versjonen av spesifikasjonen, skal ha versjonsidentifikator "2.16.578.1.39.100.5.2.2"
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="([0-9]+.)+([0-9]+)"/>
@@ -271,6 +287,7 @@
   <xs:simpleType name="generertdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.29</xs:documentation>
+      <xs:documentation>A-04</xs:documentation>
       <xs:documentation>Den dato avleveringslisten ble generert</xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO" />

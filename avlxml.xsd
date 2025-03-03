@@ -29,7 +29,7 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
 
   <xs:complexType name="avtale">
     <xs:annotation>
-      <xs:documentation>Avtale som ligger til grunn for avlevering</xs:documentation>
+      <xs:documentation>Denne klassen beskriver avtalen som avleveringen skjer innenfor.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="avtaleidentifikator" type="avlmdk:avtaleidentifikator"/>
