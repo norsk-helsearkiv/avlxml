@@ -102,9 +102,12 @@
   <xs:simpleType name="diagnosedato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.8</xs:documentation>
-      <xs:documentation>D-01</xs:documentation>
+      <xs:documentation>D-01, D-08</xs:documentation>
       <xs:documentation>
-        Dato tilknyttet diagnosen slik den er anført i pasientjournalen, eller år dersom bare årstall er kjent.
+        D-01: Dato tilknyttet diagnosen slik den er anført i pasientjournalen, eller år dersom bare årstall er kjent.
+      </xs:documentation>
+      <xs:documentation>
+        D-08: Dato diagnosen er satt
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
@@ -113,10 +116,13 @@
   <xs:simpleType name="diagnosekode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.9</xs:documentation>
-      <xs:documentation>D-02</xs:documentation>
+      <xs:documentation>D-02, D-05</xs:documentation>
       <xs:documentation>
-        Diagnosekoden slik den er anført i pasientjournalen. 
+        D-02: Diagnosekoden slik den er anført i pasientjournalen. 
         (f.eks. "037" når dette er hentet fra ICD9 benyttet i perioden 1987-1998).
+      </xs:documentation>
+      <xs:documentation>
+        D-05: Diagnosekoden som er tilknyttet dokumentet.
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -125,9 +131,12 @@
   <xs:simpleType name="diagnosetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.10</xs:documentation>
-      <xs:documentation>D-03</xs:documentation>
+      <xs:documentation>D-03, D-06</xs:documentation>
       <xs:documentation>
-        Diagnoseteksten slik den er anført i pasientjournalen (f.eks. "Stivkrampe").
+        D-03: Diagnoseteksten slik den er anført i pasientjournalen (f.eks. "Stivkrampe").
+      </xs:documentation>
+      <xs:documentation>
+        D-05: Tekstlig beskrivelse av diagnosen.
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -136,15 +145,19 @@
   <xs:simpleType name="diagnosekodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.11</xs:documentation>
-      <xs:documentation>D-04</xs:documentation>
+      <xs:documentation>D-04, D-07</xs:documentation>
       <xs:documentation>
-        Dersom diagnosekode er brukt skal det angis hvilket diagnosekodeverk som diagnosekoden er hentet fra. 
+        D-04: Dersom diagnosekode er brukt skal det angis hvilket diagnosekodeverk som diagnosekoden er hentet fra. 
         Dette vil i de fleste tilfeller omfatte forskjellige versjoner av ICD-kodeverk, og følgende verdier skal da benyttes: 
           ICD7: 2.16.578.1.12.4.1.1.7122
           ICD8: 2.16.578.1.12.4.1.1.7121
           ICD9: 2.16.578.1.12.4.1.1.7120
           ICD10: 2.16.578.1.12.4.1.1.7110
         Dersom kodeverket er ukjent, benyttes verdi 0.
+      </xs:documentation>
+      <xs:documentation>
+        D-07: Kodeverk som diagnosekoden er hentet fra. 
+        Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">

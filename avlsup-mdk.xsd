@@ -59,6 +59,7 @@
   <xs:simpleType name="behandlendeAvdelingReshID">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.34</xs:documentation>
+      <xs:documentation>B-01</xs:documentation>
       <xs:documentation>RESH nummer</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -67,7 +68,8 @@
   <xs:simpleType name="behandlendeAvdelingNavn">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.35</xs:documentation>
-      <xs:documentation>Navn på behandlende avdeling.</xs:documentation>
+      <xs:documentation>B-02</xs:documentation>
+      <xs:documentation>Navn</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -106,7 +108,10 @@
   <xs:simpleType name="omsorgsnivaKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.39</xs:documentation>
-      <xs:documentation>Omsorgsnivåkoden benyttet i forbindelse med episoden</xs:documentation>
+      <xs:documentation>N-01</xs:documentation>
+      <xs:documentation>
+        Omsorgsnivåkoden benyttet i forbindelse med episoden
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -114,7 +119,10 @@
   <xs:simpleType name="omsorgsnivaKodetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.40</xs:documentation>
-      <xs:documentation>Tekst knyttet til omsorgsnivåkoden</xs:documentation>
+      <xs:documentation>N-02</xs:documentation>
+      <xs:documentation>
+        Tekst knyttet til omsorgsnivåkoden
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -122,8 +130,9 @@
   <xs:simpleType name="omsorgsnivaKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.41</xs:documentation>
+      <xs:documentation>N-03</xs:documentation>
       <xs:documentation>
-        Kodeverk som omsorgsnivåkodenkoden er hentet fra. 
+        Kodeverk som omsorgsnivåkodenkoden er hentet fra.  
         Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
       </xs:documentation>
     </xs:annotation>
@@ -133,6 +142,7 @@
   <xs:simpleType name="fagomradeKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.42</xs:documentation>
+      <xs:documentation>F-01</xs:documentation>
       <xs:documentation>Fagområdekoden benyttet i forbindelse med episoden</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -141,7 +151,8 @@
   <xs:simpleType name="fagomradeKodetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.43</xs:documentation>
-      <xs:documentation>Tekst knyttet til fagområdekoden</xs:documentation>
+      <xs:documentation>F-02</xs:documentation>
+      <xs:documentation>Tekstlig beskrivelse av fagområdet</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -149,6 +160,7 @@
   <xs:simpleType name="fagomradeKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.44</xs:documentation>
+      <xs:documentation>F-03</xs:documentation>
       <xs:documentation>
         Kodeverk som fagområdekoden er hentet fra. 
         Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
@@ -160,7 +172,10 @@
   <xs:simpleType name="prosedyreKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.45</xs:documentation>
-      <xs:documentation>Prosedyrekoden benyttet i forbindelse med episoden</xs:documentation>
+      <xs:documentation>C-01</xs:documentation>
+      <xs:documentation>
+        Prosedyrekoden benyttet i forbindelse med undersøkelsen som dokumentet henviser til.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -168,7 +183,10 @@
   <xs:simpleType name="prosedyreKodetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.46</xs:documentation>
-      <xs:documentation>Tekst knyttet til prosedyrekoden</xs:documentation>
+      <xs:documentation>C-02</xs:documentation>
+      <xs:documentation>
+        Tekstlig beskrivelse av prosedyren.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -176,8 +194,9 @@
   <xs:simpleType name="prosedyreKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.47</xs:documentation>
+      <xs:documentation>C-04</xs:documentation>
       <xs:documentation>
-        Kodeverk som diagnosekoden er hentet fra. 
+        Kodeverk som prosedyrekoden er hentet fra. 
         Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
       </xs:documentation>
     </xs:annotation>
@@ -187,6 +206,7 @@
   <xs:simpleType name="prosedyreDato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.48</xs:documentation>
+      <xs:documentation>C-05</xs:documentation>
       <xs:documentation>Dato prosedyren ble gjennomført.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
@@ -195,10 +215,11 @@
   <xs:simpleType name="henvisningsperiodeId">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.49</xs:documentation>
+      <xs:documentation>H-01</xs:documentation>
       <xs:documentation>
-        Identifikator på henvisningsperioden i avleverende system.
-        Benyttes for å kunne gruppere dokumenter tilknyttet samme henvisningsperiode, og for å ha 
-        en kobling til eventuelt avleverte strukturerte data for henvisningsperioden.
+        Identifikator på henvisningsperioden i avleverende system. 
+        Benyttes for å kunne gruppere dokumenter tilknyttet samme henvisningsperiode, 
+        og for å ha en kobling til eventuelt avleverte strukturerte data for henvisningsperioden.
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -207,6 +228,7 @@
   <xs:simpleType name="henvisningsperiodeStartdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.50</xs:documentation>
+      <xs:documentation>H-02</xs:documentation>
       <xs:documentation>Dato henvisningsperioden startet</xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
@@ -215,6 +237,7 @@
   <xs:simpleType name="henvisningsperiodeSluttdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.51</xs:documentation>
+      <xs:documentation>H-03</xs:documentation>
       <xs:documentation>Dato henvisningsperioden sluttet</xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
