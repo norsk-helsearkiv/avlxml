@@ -15,7 +15,12 @@
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.1</xs:documentation>
       <xs:documentation>A-05, P-03</xs:documentation>
-      <xs:documentation>Navnet på den behandlende enhet som har, eller antas å ha, skapt arkivet.</xs:documentation>
+      <xs:documentation>
+        A-05: Navnet på den behandlende enhet som er eller antas å ha vært arkivskaper.
+      </xs:documentation>
+      <xs:documentation>
+        P-03: Navnet på den behandlende enhet som er eller antas å ha vært arkivskaper.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -25,9 +30,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.2</xs:documentation>
       <xs:documentation>A-03</xs:documentation>
       <xs:documentation>
-        Tekstlig beskrivelse av den aktuelle avleveringen.
-      </xs:documentation>
-      <xs:documentation>
+        Tekstlig beskrivelse av den aktuelle avleveringen. 
         Typisk beskrivelse av serie, periode eller annen avgrensning.
       </xs:documentation>
     </xs:annotation>
@@ -39,9 +42,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.3</xs:documentation>
       <xs:documentation>A-02</xs:documentation>
       <xs:documentation>
-        En unik identifikator tildelt av Norsk helsearkiv ved inngåelse av avtale om avlevering. (OID-format)
-      </xs:documentation>
-      <xs:documentation>
+        En unik identifikator tildelt av Norsk helsearkiv ved inngåelse av avtale om avlevering. (OID-format) 
         Siden en avtale kan beskrive flere uavhengige avleveringer, er denne ikke den samme som avtaleidentifikatoren.
       </xs:documentation>
     </xs:annotation>
@@ -55,10 +56,8 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.4</xs:documentation>
       <xs:documentation>A-01</xs:documentation>
       <xs:documentation>
-        Spesifikasjonens versjonsnummer uttrykt i OID-formatet.
-      </xs:documentation>
-      <xs:documentation>
-        Avleveringer som følger denne versjonen av spesifikasjonen, skal ha versjonsidentifikator "2.16.578.1.39.100.5.2.2"
+        Spesifikasjonens versjonsnummer uttrykt i OID-formatet. 
+        Avleveringer som følger denne versjonen av spesifikasjonen, skal ha versjonsidentifikator "2.16.578.1.39.100.5.2.2".
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -71,9 +70,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.5</xs:documentation>
       <xs:documentation>A-08</xs:documentation>
       <xs:documentation>
-        Tekstlig beskrivelse av den aktuelle avtalen.
-      </xs:documentation>
-      <xs:documentation>
+        Tekstlig beskrivelse av den aktuelle avtalen. 
         Typisk innhold vil være kort beskrivelse av virksomheten og hvilket arkiv, omfang og periode avtalen skal omfatte.
       </xs:documentation>
     </xs:annotation>
@@ -119,9 +116,7 @@
       <xs:documentation>D-02</xs:documentation>
       <xs:documentation>
         Diagnosekoden slik den er anført i pasientjournalen. 
-      </xs:documentation>
-      <xs:documentation>
-        (f.eks. "037" når dette er hentet fra ICD9 benyttet i perioden 1987-1998)
+        (f.eks. "037" når dette er hentet fra ICD9 benyttet i perioden 1987-1998).
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -132,7 +127,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.10</xs:documentation>
       <xs:documentation>D-03</xs:documentation>
       <xs:documentation>
-        Diagnoseteksten slik den er anført i pasientjournalen (f.eks. "Stivkrampe")
+        Diagnoseteksten slik den er anført i pasientjournalen (f.eks. "Stivkrampe").
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -143,16 +138,14 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.11</xs:documentation>
       <xs:documentation>D-04</xs:documentation>
       <xs:documentation>
-        Dersom diagnosekode er brukt skal det angis hvilket diagnosekodeverk som diagnosekoden er hentet fra.
+        Dersom diagnosekode er brukt skal det angis hvilket diagnosekodeverk som diagnosekoden er hentet fra. 
+        Dette vil i de fleste tilfeller omfatte forskjellige versjoner av ICD-kodeverk, og følgende verdier skal da benyttes: 
+          ICD7: 2.16.578.1.12.4.1.1.7122
+          ICD8: 2.16.578.1.12.4.1.1.7121
+          ICD9: 2.16.578.1.12.4.1.1.7120
+          ICD10: 2.16.578.1.12.4.1.1.7110
+        Dersom kodeverket er ukjent, benyttes verdi 0.
       </xs:documentation>
-      <xs:documentation>
-        Dette vil i de fleste tilfeller omfatte forskjellige versjoner av ICD-kodeverk, og følgende verdier skal da benyttes:
-      </xs:documentation>
-      <xs:documentation>ICD7: 2.16.578.1.12.4.1.1.7122</xs:documentation>
-      <xs:documentation>ICD8: 2.16.578.1.12.4.1.1.7121</xs:documentation>
-      <xs:documentation>ICD9: 2.16.578.1.12.4.1.1.7120</xs:documentation>
-      <xs:documentation>ICD10: 2.16.578.1.12.4.1.1.7110</xs:documentation>
-      <xs:documentation>Dersom kodeverket er ukjent, benyttes verdi 0.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="(0|([0-9]+.)+([0-9]+))"/>
@@ -164,9 +157,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.12 </xs:documentation>
       <xs:documentation>P-02</xs:documentation>
       <xs:documentation>
-        Dersom det er gjort avtale om innlegg av faneark i den fysiske pasientjournalen med sikte på senere digitalisering, 
-      </xs:documentation>
-      <xs:documentation>
+        Dersom det er gjort avtale om innlegg av faneark i den fysiske pasientjournalen med sikte på senere digitalisering,  
         skal denne identifikatoren registreres fra det aktuelle fanearket som legges i journalen.
       </xs:documentation>
     </xs:annotation>
@@ -178,9 +169,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.13</xs:documentation>
       <xs:documentation>P-07</xs:documentation>
       <xs:documentation>
-        Pasientens fødselsnummer dersom det finnes eller er kjent jf. helsearkivforskriften § 23 annet ledd punkt a.
-      </xs:documentation>
-      <xs:documentation>
+        Pasientens fødselsnummer dersom det finnes eller er kjent jf. helsearkivforskriften § 23 annet ledd punkt a. 
         Også nasjonal D-nummer eller virksomhetsinterne H-nummer kan registreres dersom pasientens fødselsnummer ikke er kjent.
       </xs:documentation>
     </xs:annotation>
@@ -210,12 +199,13 @@
   <xs:simpleType name="journalidentifikator">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.16</xs:documentation>
-      <xs:documentation>P-01</xs:documentation>
+      <xs:documentation>P-01, S-02</xs:documentation>
       <xs:documentation>
-        Identifikator for pasientjournalen som er garantert unik innenfor denne avleveringen. 
+        P-01: Identifikator for pasientjournalen som er garantert unik innenfor denne avleveringen.
+        (UUID anses som en velegnet identifikator for dette formålet og bør benyttes om mulig.)
       </xs:documentation>
       <xs:documentation>
-        (UUID anses som en velegnet identifikator for dette formålet og bør benyttes om mulig.)
+        S-02: Identifikator som er benyttet for pasienten man etablerer supplerende opplysninger for. 
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
@@ -250,12 +240,8 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.19</xs:documentation>
       <xs:documentation>P-04</xs:documentation>
       <xs:documentation>
-        En kodet verdi som identifiserer den aktuelle lagringsenhet (boks) som inneholder den fysiske pasientjournalen.
-      </xs:documentation>
-      <xs:documentation>
-        Det kan registreres flere verdier tilknyttet samme pasientjournal dersom denne er så omfangsrik at den må avleveres i flere lagringsenheter.
-      </xs:documentation>
-      <xs:documentation>
+        En kodet verdi som identifiserer den aktuelle lagringsenhet (boks) som inneholder den fysiske pasientjournalen. 
+        Det kan registreres flere verdier tilknyttet samme pasientjournal dersom denne er så omfangsrik at den må avleveres i flere lagringsenheter. 
         Verdier og koder som benyttes bør avklares med Norsk helsearkiv i avtaleprosessen.
       </xs:documentation>
     </xs:annotation>
@@ -310,8 +296,6 @@
       <xs:documentation>P-11</xs:documentation>
       <xs:documentation>
         Dersom dødsdato/år ikke er kjent, men pasienten er bekreftet mors, skal arkivskaper bekrefte dette med en indikator (1= sikker mors, 0= ukjent morsstatus).
-      </xs:documentation>
-      <xs:documentation>
         Dette benyttes særlig når avlevering av pasientjournal skjer i henhold til helsearkivforskriftens § 19.
       </xs:documentation>
     </xs:annotation>
@@ -332,9 +316,7 @@
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.26</xs:documentation>
       <xs:documentation>A-10</xs:documentation>
       <xs:documentation>
-        Navnet på den virksomheten som forestår avleveringen iht. foretaksnavn i Enhetsregisteret.
-      </xs:documentation>
-      <xs:documentation>
+        Navnet på den virksomheten som forestår avleveringen iht. foretaksnavn i Enhetsregisteret. 
         (Dette kan være forskjellig fra navnet på arkivskaper i A-04)
       </xs:documentation>
     </xs:annotation>
@@ -344,9 +326,12 @@
   <xs:simpleType name="foretaksnavn">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.27</xs:documentation>
-      <xs:documentation>A-11</xs:documentation>
+      <xs:documentation>A-11, O-02</xs:documentation>
       <xs:documentation>
-        Navnet på det overordnede foretaket (dersom dette er forskjellig fra virksomhetsnavnet)
+        A-11: Navnet på det overordnede foretaket (dersom dette er forskjellig fra virksomhetsnavnet)
+      </xs:documentation>
+      <xs:documentation>
+        O-02: Navn
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string"/>
@@ -355,9 +340,12 @@
   <xs:simpleType name="organisasjonsnummer">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.28</xs:documentation>
-      <xs:documentation>A-09</xs:documentation>
+      <xs:documentation>A-09, O-01</xs:documentation>
       <xs:documentation>
-        Norsk organisasjonsnummer til ansvarlig virksomhet som forestår avleveringen
+        A-09: Norsk organisasjonsnummer til ansvarlig virksomhet som forestår avleveringen
+      </xs:documentation>
+      <xs:documentation>
+        O-01: Organisasjonsnummer
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">

@@ -14,7 +14,10 @@
   <xs:simpleType name="dokumentdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.30</xs:documentation>
-      <xs:documentation>Dato for opprettelse av dokumentet.</xs:documentation>
+      <xs:documentation>S-04</xs:documentation>
+      <xs:documentation>
+        Dato for opprettelse av dokumentet.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
@@ -33,6 +36,7 @@
   <xs:simpleType name="filsti">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.32</xs:documentation>
+      <xs:documentation>S-03</xs:documentation>
       <xs:documentation>
         Filsti og navn på dokumentet som det rapporteres supplerende opplysninger for.
       </xs:documentation>
@@ -43,6 +47,7 @@
   <xs:simpleType name="dokumentidentifikator">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.33</xs:documentation>
+      <xs:documentation>S-01</xs:documentation>
       <xs:documentation>
         Identifikator for dokumentet som er garantert unik innenfor denne avleveringen. 
         (UUID anses som en velegnet identifikator for dette formålet og bør benyttes om mulig.)
@@ -70,7 +75,12 @@
   <xs:simpleType name="episodeID">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.36</xs:documentation>
-      <xs:documentation>Unik identifikator for denne episoden. </xs:documentation>
+      <xs:documentation>E-01</xs:documentation>
+      <xs:documentation>
+        Identifikator på episoden i avleverende system. 
+        Benyttes for å kunne gruppere dokumenter tilknyttet samme episode, 
+        og for å ha en kobling til eventuelt avleverte strukturerte data for episoden.
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
@@ -78,7 +88,8 @@
   <xs:simpleType name="episodeStartdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.37</xs:documentation>
-      <xs:documentation>Da episoden startet.</xs:documentation>
+      <xs:documentation>E-02</xs:documentation>
+      <xs:documentation>Dato episoden startet. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
@@ -86,7 +97,8 @@
   <xs:simpleType name="episodeSluttdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.38</xs:documentation>
-      <xs:documentation>Da episoden sluttet</xs:documentation>
+      <xs:documentation>E-03</xs:documentation>
+      <xs:documentation>Dato episoden sluttet.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
@@ -211,6 +223,7 @@
   <xs:simpleType name="dokumenttypeKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.52</xs:documentation>
+      <xs:documentation>T-01</xs:documentation>
       <xs:documentation>
         Dokumenttypekode benyttet i helseforetaket.
       </xs:documentation>
@@ -221,6 +234,7 @@
   <xs:simpleType name="dokumenttypeTekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.53</xs:documentation>
+      <xs:documentation>T-02</xs:documentation>
       <xs:documentation>
         Tekst knyttet til dokumenttypekoden
       </xs:documentation>
@@ -231,6 +245,7 @@
   <xs:simpleType name="dokumenttypeKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.54</xs:documentation>
+      <xs:documentation>T-03</xs:documentation>
       <xs:documentation>
         Kodeverk som dokumenttypekoden er hentet fra. 
         Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
