@@ -1,5 +1,9 @@
-# Ignore oXygen project files:
+# Ignore oXygen project files
 *.xpr
+
+# Ignore Liquid Studio files
+.lxsopt
+.lxsproj
 
 # Ignore test-avls
 avlxml*.xml
