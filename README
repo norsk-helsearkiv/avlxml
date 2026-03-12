@@ -2,8 +2,12 @@ AVLXML
 
 XML-skjema for digital avleveringsliste til Norsk helsearkiv.
 
-Faglig referanse:
-https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysisk-materiale
+Faglig referanse (standarden dekker både fysiske og elektroniske avleveringer):
+
+- Fysiske pasientarkiver:
+	https://www.nasjonalarkivet.no/besok-informasjon/norsk-helsearkiv/avleveringer-helsearkiv/avlevering-fysiske-arkiv-etter-helseforskriften/
+- Elektronisk pasientmateriale:
+	https://www.nasjonalarkivet.no/besok-informasjon/norsk-helsearkiv/avleveringer-helsearkiv/avlevering-av-elektronisk-pasientmateriale/
 
 ## Innhold i repo
 
