@@ -42,7 +42,12 @@
       <xs:element name="filsti" type="supmdk:filsti"/> <!-- S-03 -->
       <xs:element name="dokumenttype" type="dokumenttype"/> <!-- Dokumenttype -->
       <xs:element name="dokumentdato" type="supmdk:dokumentdato"/> <!-- S-04 -->
-      <xs:element maxOccurs="unbounded" name="Organisasjon" type="Organisasjon"/> <!-- Organisasjon -->
+      <!-- Transitional compatibility: accept both legacy and normalized element names. -->
+      <!-- TODO: Remove legacy `Organisasjon` after external producers are migrated and the final standard locks the preferred casing. -->
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Organisasjon" type="Organisasjon"/> <!-- Legacy casing -->
+        <xs:element name="organisasjon" type="Organisasjon"/> <!-- Preferred casing -->
+      </xs:choice>
       <xs:element minOccurs="0" name="episode" type="episode"/> <!-- Episode -->
       <xs:element minOccurs="0" maxOccurs="unbounded" name="diagnose" type="diagnose"/> <!-- Diagnose -->
       <xs:element minOccurs="0" maxOccurs="unbounded" name="prosedyre" type="prosedyre"/> <!-- Prosedyre -->

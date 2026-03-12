@@ -1,39 +1,56 @@
-********************************************************************************    
-AVLXML 
+AVLXML
 
-XML-skjema for avleveringsliste til Norsk helsearkiv
+XML-skjema for digital avleveringsliste til Norsk helsearkiv.
+
+Faglig referanse:
 https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysisk-materiale
 
-********************************************************************************
-2022-05-09 - AVLXML V4 Draft er publisert (areant)
-https://github.com/norsk-helsearkiv/avlxml/tree/avlxml-v4-draft
+## Innhold i repo
 
-Store endringer i avlsup. Supplerende opplysninger beskriver nå hvert enkelt
-dokument i avleveringen i stedet for å ligge under journal i avlxml.
+Mappen `Schemas/` inneholder:
 
-Supplerende opplysninger kan videre kun leveres som én fil per journal, som 
-definert i EPJARK standarden.
+- `Schemas/avlxml.xsd`: Hovedskjema for grunnleggende avleveringsliste (AVLXML).
+- `Schemas/avlxml-mdk.xsd`: Metadatatyper brukt av `avlxml.xsd`.
+- `Schemas/avlsup.xsd`: Hovedskjema for supplerende opplysninger (AVLSUP).
+- `Schemas/avlsup-mdk.xsd`: Metadatatyper brukt av `avlsup.xsd`.
 
-********************************************************************************
-2020-12-08 - AVLXML V3 er publisert (areant)
+Mappen `_local_docs/` brukes til lokale arbeidsdokumenter (for eksempel høringsutkast).
+Denne mappen er lokalt arbeidsområde og er bevisst ignorert av git.
 
-Endringer fra forrige versjon:
-------------------------------------------------------
-| Ref  | Endring                                     |
-| P-13 | Førstekontakt er gjort obligatorisk         |
-| P-14 | Sistekontakt er gjort obligatorisk          |
-| P-03 | Arkivskaper er kommet inn på pasientjournal | 
-| A-04 | Generertdato er kommet inn på avlevering    |
-------------------------------------------------------
+## Validering
 
-********************************************************************************
-2018-10-04 - Opprettet (jengle)
+Eksempel med `xmllint` for AVLXML:
 
-avlxml-mdk.xsd - Skjema for metadatakatalog - grunnleggende opplysninger
-avlsup-mdk.xsd - Skjema for metadatakatalog - supplerende opplysninger
+```bash
+xmllint --noout --schema Schemas/avlxml.xsd sti/til/avlxml-fil.xml
+```
 
-avlxml.xsd - Skjema for den komplette avleveringslisten 
-avlsup.xsd - Skjema for supplerende opplysninger
+Eksempel med `xmllint` for AVLSUP:
 
-avlxml-graf.png - Modellgraf for avleveringslisten
-avlsup-graf.png - Modellgraf for supplerende opplysninger
+```bash
+xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
+```
+
+## Viktige føringer i gjeldende skjema
+
+- `A-01 avlxmlversjon` er låst til `2.16.578.1.39.100.5.2.4` i `Schemas/avlxml-mdk.xsd`.
+- `P-11 sikkermors` er modellert som indikator `0` eller `1`.
+- Feltrekkefølge i `virksomhet` og `pasientjournal` er bevisst beholdt i tråd med eksisterende v3-baserte implementasjoner.
+- I `Schemas/avlsup.xsd` støttes både `Organisasjon` (legacy) og `organisasjon` (foretrukket) i overgangsperiode.
+
+## Endringslogg (kort)
+
+- 2026-03-12
+	- Låst `A-01 avlxmlversjon` til fast v4-OID `2.16.578.1.39.100.5.2.4`.
+	- Endret `sikkermors` til streng indikator (`0`/`1`).
+	- Lagt til overgangsstøtte for både `Organisasjon` og `organisasjon` i AVLSUP.
+- 2022-05-09
+	- AVLXML v4 draft publisert.
+	- Store endringer i AVLSUP: supplerende opplysninger beskriver dokumentnivå.
+- 2020-12-08
+	- AVLXML v3 publisert.
+	- `P-13` og `P-14` gjort obligatoriske.
+	- `P-03` lagt til på pasientjournal.
+	- `A-04` lagt til på avlevering.
+- 2018-10-04
+	- Første opprettelse av skjemaene.

@@ -50,11 +50,11 @@
             <xs:documentation>A-01</xs:documentation>
             <xs:documentation>
         Spesifikasjonens versjonsnummer uttrykt i OID-formatet. 
-        Avleveringer som følger denne versjonen av spesifikasjonen, skal ha versjonsidentifikator "2.16.578.1.39.100.5.2.2".
+        Avleveringer som følger denne versjonen av spesifikasjonen, skal ha versjonsidentifikator "2.16.578.1.39.100.5.2.4".
       </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="([0-9]+.)+([0-9]+)" />
+            <xs:enumeration value="2.16.578.1.39.100.5.2.4" />
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="avtalebeskrivelse">
@@ -285,7 +285,9 @@
         Dette benyttes særlig når avlevering av pasientjournal skjer i henhold til helsearkivforskriftens § 19.
       </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="xs:boolean" />
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[01]" />
+        </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="sistekontakt">
         <xs:annotation>

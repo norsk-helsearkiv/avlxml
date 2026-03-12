@@ -7,3 +7,7 @@
 
 # Ignore test-avls
 avlxml*.xml
+
+# Ignore local working documents (not part of repository contents)
+local_docs/
+_local_docs/
