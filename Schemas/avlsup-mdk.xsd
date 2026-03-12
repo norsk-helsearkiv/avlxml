@@ -1,54 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid Studio (Trial) (https://www.liquid-technologies.com)-->
 <xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
   targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"
-  elementFormDefault="qualified">
-
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- 
+********************************************************************************    
+    AVLXML supplerende opplysninger metadatakatalog (avlxmlbsmdk.xsd)
+    Inngår i XML-skjema for avleveringsliste til Norsk helsearkiv
+******************************************************************************** 
+-->
   <xs:simpleType name="dokumentdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.30</xs:documentation>
       <xs:documentation>S-04</xs:documentation>
-      <xs:documentation>
-        Dato for opprettelse av dokumentet.
-      </xs:documentation>
+      <xs:documentation>Dato for opprettelse av dokumentet.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
-
   <xs:simpleType name="saksnummer">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.31</xs:documentation>
-      <xs:documentation>
-        Benyttes i tilfeller hvor det har blitt etablert en sak i sakssystemet som dokumentet er
-        tilknyttet.
-      </xs:documentation>
+      <xs:documentation> Benyttes i tilfeller hvor det har blitt etablert en sak i sakssystemet som
+        dokumentet er tilknyttet. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="filsti">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.32</xs:documentation>
       <xs:documentation>S-03</xs:documentation>
-      <xs:documentation>
-        Filsti og navn på dokumentet som det rapporteres supplerende opplysninger for.
-      </xs:documentation>
+      <xs:documentation>Filsti og navn på dokumentet som det rapporteres supplerende opplysninger
+        for.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="dokumentidentifikator">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.33</xs:documentation>
       <xs:documentation>S-01</xs:documentation>
-      <xs:documentation>
-        Identifikator for dokumentet som er garantert unik innenfor denne avleveringen.
-        (UUID anses som en velegnet identifikator for dette formålet og bør benyttes om mulig.)
-      </xs:documentation>
+      <xs:documentation>Identifikator for dokumentet som er garantert unik innenfor denne
+        avleveringen.</xs:documentation>
+      <xs:documentation>(UUID anses som en velegnet identifikator for dette formålet og bør benyttes
+        om mulig.)</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="behandlendeAvdelingReshID">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.34</xs:documentation>
@@ -57,7 +54,6 @@
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="behandlendeAvdelingNavn">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.35</xs:documentation>
@@ -66,20 +62,16 @@
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="episodeID">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.36</xs:documentation>
       <xs:documentation>E-01</xs:documentation>
-      <xs:documentation>
-        Identifikator på episoden i avleverende system.
-        Benyttes for å kunne gruppere dokumenter tilknyttet samme episode,
-        og for å ha en kobling til eventuelt avleverte strukturerte data for episoden.
-      </xs:documentation>
+      <xs:documentation> Identifikator på episoden i avleverende system. Benyttes for å kunne
+        gruppere dokumenter tilknyttet samme episode, og for å ha en kobling til eventuelt avleverte
+        strukturerte data for episoden. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="episodeStartdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.37</xs:documentation>
@@ -88,7 +80,6 @@
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
-
   <xs:simpleType name="episodeSluttdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.38</xs:documentation>
@@ -97,41 +88,32 @@
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
-
   <xs:simpleType name="omsorgsnivaKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.39</xs:documentation>
       <xs:documentation>N-01</xs:documentation>
-      <xs:documentation>
-        Omsorgsnivåkoden benyttet i forbindelse med episoden
-      </xs:documentation>
+      <xs:documentation>Omsorgsnivåkoden benyttet i forbindelse med episoden</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="omsorgsnivaKodetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.40</xs:documentation>
       <xs:documentation>N-02</xs:documentation>
-      <xs:documentation>
-        Tekst knyttet til omsorgsnivåkoden
-      </xs:documentation>
+      <xs:documentation>Tekst knyttet til omsorgsnivåkoden</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="omsorgsnivaKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.41</xs:documentation>
       <xs:documentation>N-03</xs:documentation>
-      <xs:documentation>
-        Kodeverk som omsorgsnivåkodenkoden er hentet fra.
-        Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
-      </xs:documentation>
+      <xs:documentation>Kodeverk som omsorgsnivåkodenkoden er hentet fra.</xs:documentation>
+      <xs:documentation>Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som
+        dokumentasjon i avleveringen.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="fagomradeKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.42</xs:documentation>
@@ -140,7 +122,6 @@
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="fagomradeKodetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.43</xs:documentation>
@@ -149,53 +130,42 @@
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="fagomradeKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.44</xs:documentation>
       <xs:documentation>F-03</xs:documentation>
-      <xs:documentation>
-        Kodeverk som fagområdekoden er hentet fra.
-        Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
-      </xs:documentation>
+      <xs:documentation>Kodeverk som fagområdekoden er hentet fra.</xs:documentation>
+      <xs:documentation>Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som
+        dokumentasjon i avleveringen.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="prosedyreKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.45</xs:documentation>
       <xs:documentation>C-01</xs:documentation>
-      <xs:documentation>
-        Prosedyrekoden benyttet i forbindelse med undersøkelsen som dokumentet henviser til.
-      </xs:documentation>
+      <xs:documentation> Prosedyrekoden benyttet i forbindelse med undersøkelsen som dokumentet
+        henviser til. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="prosedyreKodetekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.46</xs:documentation>
       <xs:documentation>C-02</xs:documentation>
-      <xs:documentation>
-        Tekstlig beskrivelse av prosedyren.
-      </xs:documentation>
+      <xs:documentation> Tekstlig beskrivelse av prosedyren. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="prosedyreKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.47</xs:documentation>
       <xs:documentation>C-04</xs:documentation>
-      <xs:documentation>
-        Kodeverk som prosedyrekoden er hentet fra.
-        Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
-      </xs:documentation>
+      <xs:documentation> Kodeverk som prosedyrekoden er hentet fra. Hvis det er et lokalt kodeverk,
+        må dette kodeverket legges ved som dokumentasjon i avleveringen. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="prosedyreDato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.48</xs:documentation>
@@ -204,20 +174,16 @@
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
-
   <xs:simpleType name="henvisningsperiodeId">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.49</xs:documentation>
       <xs:documentation>H-01</xs:documentation>
-      <xs:documentation>
-        Identifikator på henvisningsperioden i avleverende system.
-        Benyttes for å kunne gruppere dokumenter tilknyttet samme henvisningsperiode,
-        og for å ha en kobling til eventuelt avleverte strukturerte data for henvisningsperioden.
-      </xs:documentation>
+      <xs:documentation> Identifikator på henvisningsperioden i avleverende system. Benyttes for å
+        kunne gruppere dokumenter tilknyttet samme henvisningsperiode, og for å ha en kobling til
+        eventuelt avleverte strukturerte data for henvisningsperioden. </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ikkeTom"/>
+    <xs:restriction base="xs:string"/>
   </xs:simpleType>
-
   <xs:simpleType name="henvisningsperiodeStartdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.50</xs:documentation>
@@ -226,7 +192,6 @@
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
-
   <xs:simpleType name="henvisningsperiodeSluttdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.51</xs:documentation>
@@ -235,41 +200,37 @@
     </xs:annotation>
     <xs:restriction base="arkDATO"/>
   </xs:simpleType>
-
   <xs:simpleType name="dokumenttypeKode">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.52</xs:documentation>
       <xs:documentation>T-01</xs:documentation>
-      <xs:documentation>
-        Dokumenttypekode benyttet i helseforetaket.
-      </xs:documentation>
+      <xs:documentation>Dokumenttypekode benyttet i helseforetaket.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ikkeTom"/>
+    <xs:restriction base="xs:string"/>
   </xs:simpleType>
-
   <xs:simpleType name="dokumenttypeTekst">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.53</xs:documentation>
       <xs:documentation>T-02</xs:documentation>
-      <xs:documentation>
-        Tekst knyttet til dokumenttypekoden
-      </xs:documentation>
+      <xs:documentation>Tekst knyttet til dokumenttypekoden</xs:documentation>
     </xs:annotation>
     <xs:restriction base="ikkeTom"/>
   </xs:simpleType>
-
   <xs:simpleType name="dokumenttypeKodeverk">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.54</xs:documentation>
       <xs:documentation>T-03</xs:documentation>
-      <xs:documentation>
-        Kodeverk som dokumenttypekoden er hentet fra.
-        Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som dokumentasjon i avleveringen.
-      </xs:documentation>
+      <xs:documentation>Kodeverk som dokumenttypekoden er hentet fra.</xs:documentation>
+      <xs:documentation>Hvis det er et lokalt kodeverk, må dette kodeverket legges ved som
+        dokumentasjon i avleveringen.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ikkeTom"/>
+    <xs:restriction base="xs:string"/>
   </xs:simpleType>
-
+  <!--
+********************************************************************************    
+    Spesielle datatyper 
+********************************************************************************    
+-->
   <xs:simpleType name="arkDATO">
     <xs:annotation>
       <xs:documentation>Generelt datoformat i avlxml som tillater bare årstall</xs:documentation>
@@ -279,7 +240,6 @@
       <xs:pattern value="(1[89][0-9]{2}|20[0-9]{2})(0[1-9]|1[012])([012][0-9]|3[01])"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="ikkeTom">
     <xs:annotation>
       <xs:documentation>Generell regel for tekstfelter som ikke skal være tomme</xs:documentation>
@@ -289,5 +249,4 @@
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
-
 </xs:schema>

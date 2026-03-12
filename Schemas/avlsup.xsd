@@ -1,179 +1,210 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml/avlsup"
-  targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:avlmdk="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:avlmdk="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
+  xmlns="http://www.arkivverket.no/standarder/nha/avlxml/avlsup"
   xmlns:supmdk="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"
-  elementFormDefault="qualified">
-
-  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
-    schemaLocation="avlxml-mdk.xsd"/>
-  <xs:import namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"
-    schemaLocation="avlsup-mdk.xsd"/>
-
+  elementFormDefault="qualified"
+  targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="avlxml-mdk.xsd"
+    namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"/>
+  <xs:import schemaLocation="avlsup-mdk.xsd"
+    namespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"/>
   <xs:element name="avlsup" type="supplerendeopplysninger"/>
 
+  <!-- Supplerende opplysninger - EPJ-metadata -->
   <xs:complexType name="supplerendeopplysninger">
     <xs:annotation>
-      <xs:documentation>
-        Supplerende opplysninger er en egen datastruktur som angir metadata knyttet til avleverte dokumenter.
-      </xs:documentation>
-      <xs:documentation>
-        For hver pasient etableres det en fil med supplerende opplysninger per dokument.
-      </xs:documentation>
-      <xs:documentation>
-        Hvert dokument kobles til pasientjournalen ved hjelp av journalidentifikatoren som er benyttet for pasienten.
-      </xs:documentation>
+      <xs:documentation>Supplerende opplysninger er en egen datastruktur som angir metadata knyttet
+        til avleverte dokumenter.</xs:documentation>
+      <xs:documentation>For hver pasient etableres det en fil med supplerende opplysninger per
+        dokument.</xs:documentation>
+      <xs:documentation>Hvert dokument kobles til pasientjournalen ved hjelp av
+        journalidentifikatoren som er benyttet for pasienten.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="dokument" type="dokument"/>
+      <xs:element name="dokument" type="dokument" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Dokument -->
   <xs:complexType name="dokument">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen gjentas for hvert dokument i pasientjournalen.
-      </xs:documentation>
+      <xs:documentation>Denne klassen gjentas for hvert dokument i
+        pasientjournalen.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <!-- S-01 -->
       <xs:element name="dokumentidentifikator" type="supmdk:dokumentidentifikator"/>
-      <xs:element name="journalidentifikator" type="avlmdk:journalidentifikator"/>
+      <!-- S-02 -->
+      <xs:element name="journalidentifikator" type="avlmdk:journalidentifikator" minOccurs="0"/>
+      <!-- S-03 -->
       <xs:element name="filsti" type="supmdk:filsti"/>
+      <!-- Dokumenttype -->
       <xs:element name="dokumenttype" type="dokumenttype"/>
-      <xs:element name="dokumentdato" type="supmdk:dokumentdato"/>
-      <!-- Transitional compatibility: accept both legacy and normalized element names. -->
-      <!-- TODO: Remove legacy `Organisasjon` after external producers are migrated and the final standard locks the preferred casing. -->
-      <xs:choice maxOccurs="unbounded">
-        <xs:element name="Organisasjon" type="Organisasjon"/>
-        <xs:element name="organisasjon" type="Organisasjon"/>
-      </xs:choice>
-      <xs:element minOccurs="0" name="episode" type="episode"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="diagnose" type="diagnose"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="prosedyre" type="prosedyre"/>
-      <xs:element minOccurs="0" name="henvisningsperiode" type="henvisningsperiode"/>
-      <xs:element minOccurs="0" name="behandlendeAvdeling" type="behandlendeAvdeling"/>
-      <xs:element minOccurs="0" name="saksnummer" type="supmdk:saksnummer"/>
+      <!-- S-04 -->
+      <xs:element name="dokumentdato" type="supmdk:dokumentdato" minOccurs="0"/>
+      <!-- Organisasjon -->
+      <xs:element name="Organisasjon" type="Organisasjon" minOccurs="1" maxOccurs="unbounded"/>
+      <!-- Episode -->
+      <xs:element name="episode" type="episode" minOccurs="0"/>
+      <!-- Diagnose -->
+      <xs:element name="diagnose" type="diagnose" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="prosedyre" type="prosedyre" minOccurs="0" maxOccurs="unbounded"/>
+      <!-- Prosedyre -->
+      <xs:element name="henvisningsperiode" type="henvisningsperiode" minOccurs="0"/>
+      <!-- Henvisningsperiode -->
+      <xs:element name="behandlendeAvdeling" type="behandlendeAvdeling" minOccurs="0"/>
+      <!-- Behandlende avdeling -->
+      <xs:element name="saksnummer" type="supmdk:saksnummer" minOccurs="0"/>
+      <!-- S-05 -->
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Dokumenttype -->
   <xs:complexType name="dokumenttype">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen beskriver dokumenttype.
-      </xs:documentation>
+      <xs:documentation>Denne klassen beskriver dokumenttype.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="dokumenttypeKode" type="supmdk:dokumenttypeKode"/>
+      <!-- T-01 -->
+      <xs:element name="dokumenttypeKode" type="supmdk:dokumenttypeKode" minOccurs="0"/>
+      <!-- T-02 -->
       <xs:element name="dokumenttypeTekst" type="supmdk:dokumenttypeTekst"/>
-      <xs:element name="dokumenttypeKodeverk" type="supmdk:dokumenttypeKodeverk"/>
+      <!-- T-03 -->
+      <xs:element name="dokumenttypeKodeverk" type="supmdk:dokumenttypeKodeverk" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Organisasjon -->
   <xs:complexType name="Organisasjon">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen inneholder opplysninger om organisasjonen(e) som har lagt inn informasjon i dokumentet.
-      </xs:documentation>
+      <xs:documentation>Denne klassen inneholder opplysninger om organisasjonen(e) som har lagt inn
+        informasjon i dokumentet.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <!-- O-01 -->
       <xs:element name="organisasjonNummer" type="avlmdk:organisasjonsnummer"/>
+      <!-- O-02 -->
       <xs:element name="organisasjonNavn" type="avlmdk:virksomhetsnavn"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Episode -->
   <xs:complexType name="episode">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen benyttes for dokumenter som er tilknyttet en episode.
-      </xs:documentation>
+      <xs:documentation>Denne klassen benyttes for dokumenter som er tilknyttet en
+        episode.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="episodeId" type="supmdk:episodeID"/>
-      <xs:element name="episodeStartdato" type="supmdk:episodeStartdato"/>
-      <xs:element name="episodeSluttdato" type="supmdk:episodeSluttdato"/>
-      <xs:element name="omsorgsniva" type="omsorgsniva"/>
-      <xs:element name="fagomrade" type="fagomrade"/>
+      <!-- E-01 -->
+      <xs:element name="episodeId" type="supmdk:episodeID" minOccurs="0"/>
+      <!-- E-02 -->
+      <xs:element name="episodeStartdato" type="supmdk:episodeStartdato" minOccurs="0"/>
+      <!-- E-03 -->
+      <xs:element name="episodeSluttdato" type="supmdk:episodeSluttdato" minOccurs="0"/>
+      <!-- Omsorgsnivå -->
+      <xs:element name="omsorgsniva" type="omsorgsniva" minOccurs="0"/>
+      <!-- Fagområde -->
+      <xs:element name="fagomrade" type="fagomrade" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Omsorgsnivå -->
   <xs:complexType name="omsorgsniva">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen beskriver omsorgsnivå på episoden. Omsorgsnivå angir om behandlingen er gitt ved innleggelse, dagbehandling eller poliklinikk.
-      </xs:documentation>
+      <xs:documentation>Denne klassen beskriver omsorgsnivå på episoden. Omsorgsnivå angir om
+        behandlingen er gitt ved innleggelse, dagbehandling eller poliklinikk.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <!-- N-01 -->
       <xs:element name="omsorgsnivaKode" type="supmdk:omsorgsnivaKode"/>
+      <!-- N-02 -->
       <xs:element name="omsorgsnivaKodetekst" type="supmdk:omsorgsnivaKodetekst"/>
+      <!-- N-03 -->
       <xs:element name="omsorgsnivaKodeverk" type="supmdk:omsorgsnivaKodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Fagområde -->
   <xs:complexType name="fagomrade">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen beskriver hvilket fagområde episoden tilhører.
-      </xs:documentation>
+      <xs:documentation>Denne klassen beskriver hvilket fagområde episoden
+        tilhører.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <!-- F-01 -->
       <xs:element name="fagomradeKode" type="supmdk:fagomradeKode"/>
+      <!-- F-02 -->
       <xs:element name="fagomradeKodetekst" type="supmdk:fagomradeKodetekst"/>
+      <!-- F-03 -->
       <xs:element name="fagomradeKodeverk" type="supmdk:fagomradeKodeverk"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Diagnose -->
   <xs:complexType name="diagnose">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen inneholder hver enkelt diagnose som er tilknyttet dokumentet.
-      </xs:documentation>
+      <xs:documentation>Denne klassen inneholder hver enkelt diagnose som er tilknyttet
+        dokumentet.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="diagnoseKode" type="avlmdk:diagnosekode"/>
+      <!-- D-05 -->
+      <xs:element name="diagnoseKode" type="avlmdk:diagnosekode" minOccurs="0"/>
+      <!-- D-06 -->
       <xs:element name="diagnoseKodetekst" type="avlmdk:diagnosetekst"/>
-      <xs:element name="diagnoseKodeverk" type="avlmdk:diagnosekodeverk"/>
+      <!-- D-07 -->
+      <xs:element name="diagnoseKodeverk" type="avlmdk:diagnosekodeverk" minOccurs="0"/>
+      <!-- D-08 -->
       <xs:element name="diagnoseDato" type="avlmdk:diagnosedato"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Prosedyre -->
   <xs:complexType name="prosedyre">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen beskriver prosedyre(ne) som har blitt gjennomført i forbindelse undersøkelse beskrevet i et dokument.
-      </xs:documentation>
+      <xs:documentation> Denne klassen beskriver prosedyre(ne) som har blitt gjennomført i
+        forbindelse undersøkelse beskrevet i et dokument. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="prosedyreKode" type="supmdk:prosedyreKode"/>
+      <!-- C-01 -->
+      <xs:element name="prosedyreKode" type="supmdk:prosedyreKode" minOccurs="0"/>
+      <!-- C-02 -->
       <xs:element name="prosedyreKodetekst" type="supmdk:prosedyreKodetekst"/>
-      <xs:element name="prosedyreKodeverk" type="supmdk:prosedyreKodeverk"/>
+      <!-- C-04 -->
+      <xs:element name="prosedyreKodeverk" type="supmdk:prosedyreKodeverk" minOccurs="0"/>
+      <!-- C-05 -->
       <xs:element name="prosedyreDato" type="supmdk:prosedyreDato"/>
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Henvisningsperiode -->
   <xs:complexType name="henvisningsperiode">
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen beskriver henvisningsperiden dokumentet er tilknyttet.
+      <xs:documentation> Denne klassen beskriver henvisningsperiden dokumentet er tilknyttet.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="henvisningsperiodeId" type="supmdk:henvisningsperiodeId"/>
-      <xs:element name="henvisningsperiodeStartdato" type="supmdk:henvisningsperiodeStartdato"/>
-      <xs:element name="henvisningsperiodeSluttdato" type="supmdk:henvisningsperiodeSluttdato"/>
+      <xs:element name="henvisningsperiodeId" type="supmdk:henvisningsperiodeId" minOccurs="0"/>
+      <!-- H-01 -->
+      <xs:element name="henvisningsperiodeStartdato" type="supmdk:henvisningsperiodeStartdato"
+        minOccurs="0"/>
+      <!-- H-02 -->
+      <xs:element name="henvisningsperiodeSluttdato" type="supmdk:henvisningsperiodeSluttdato"
+        minOccurs="0"/>
+      <!-- H-03 -->
     </xs:sequence>
   </xs:complexType>
-
   <xs:complexType name="behandlendeAvdeling">
+    <!-- Behandlende avdeling -->
     <xs:annotation>
-      <xs:documentation>
-        Denne klassen angir hvilken avdeling som var ansvarlig for behandlingen dokumentet beskriver.
-      </xs:documentation>
+      <xs:documentation> Denne klassen angir hvilken avdeling som var ansvarlig for behandlingen
+        dokumentet beskriver. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="behandlendeAvdelingReshId" type="supmdk:behandlendeAvdelingReshID"/>
+      <!-- B-01 -->
       <xs:element name="behandlendeAvdelingNavn" type="supmdk:behandlendeAvdelingNavn"/>
+      <!-- B-02 -->
     </xs:sequence>
   </xs:complexType>
-
 </xs:schema>
