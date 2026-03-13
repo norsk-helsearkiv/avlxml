@@ -5,6 +5,20 @@ XML-skjema for avleveringsliste til Norsk helsearkiv
 https://www.arkivverket.no/om-oss/norsk-helsearkiv/avlevering-av-fysisk-materiale
 
 ********************************************************************************
+2026-03-13 - AVLXML POV-variant opprettet (are)
+
+POV-varianten er basert pa v3-linjen i `master`.
+Den beholder versjonsidentifikator `2.16.578.1.39.100.5.2.3`.
+
+Tilpasninger for POV:
+- `forstekontakt` og `sistekontakt` er gjort valgfrie.
+- `spesialisthelsetjeneste` er lagt til under virksomhet.
+- `avtaleidentifikator` tillater `AVTALEID`.
+- `organisasjonsnummer` tillater `\d{7}` eller `MANGLER_BEHANDLERID`.
+
+`avlsup.xsd` og `avlsup-mdk.xsd` er beholdt uendret i branchen.
+
+********************************************************************************
 2022-05-09 - AVLXML V4 Draft er publisert (areant)
 https://github.com/norsk-helsearkiv/avlxml/tree/avlxml-v4-draft
 

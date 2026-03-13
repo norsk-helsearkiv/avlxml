@@ -51,6 +51,8 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element name="virksomhetsnavn" type="avlmdk:virksomhetsnavn"/>
       <xs:element minOccurs="0" name="foretaksnavn" type="avlmdk:foretaksnavn"/>
       <xs:element name="organisasjonsnummer" type="avlmdk:organisasjonsnummer"/>
+      <xs:element minOccurs="0" name="spesialisthelsetjeneste"
+        type="avlmdk:spesialisthelsetjeneste"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -82,8 +84,8 @@ NB: Dokumentasjon på http://www.arkivverket.no/standarder/nha/avlxml
       <xs:element minOccurs="0" name="morsdato" type="avlmdk:morsdato"/>
       <xs:element minOccurs="0" name="sikkermors" type="avlmdk:sikkermors"/>
       <xs:element name="kjonn" type="avlmdk:kjonn"/>
-      <xs:element minOccurs="1" name="forstekontakt" type="avlmdk:forstekontakt"/>
-      <xs:element minOccurs="1" name="sistekontakt" type="avlmdk:sistekontakt"/>
+      <xs:element minOccurs="0" name="forstekontakt" type="avlmdk:forstekontakt"/>
+      <xs:element minOccurs="0" name="sistekontakt" type="avlmdk:sistekontakt"/>
       <xs:element minOccurs="0" name="merknad" type="avlmdk:merknad"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="diagnose" type="diagnose"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="lagringsenhet"
