@@ -44,6 +44,8 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 
 ## Endringslogg (kort)
 
+- 2026-03-13
+	- Fjernet ubrukt type `spesialisthelsetjeneste` fra `Schemas/avlxml-mdk.xsd` i strict.
 - 2026-03-12
 	- Låst `A-01 avlxmlversjon` til fast v4-OID `2.16.578.1.39.100.5.2.4`.
 	- Endret `sikkermors` til streng indikator (`0`/`1`).
