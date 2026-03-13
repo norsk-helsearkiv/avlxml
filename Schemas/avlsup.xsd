@@ -36,7 +36,10 @@
       <xs:element name="filsti" type="supmdk:filsti"/>
       <xs:element name="dokumenttype" type="dokumenttype"/>
       <xs:element name="dokumentdato" type="supmdk:dokumentdato" minOccurs="0"/>
-      <xs:element name="Organisasjon" type="Organisasjon" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Organisasjon" type="Organisasjon"/>
+        <xs:element name="organisasjon" type="Organisasjon"/>
+      </xs:choice>
       <xs:element name="episode" type="episode" minOccurs="0"/>
       <xs:element name="diagnose" type="diagnose" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="prosedyre" type="prosedyre" minOccurs="0" maxOccurs="unbounded"/>

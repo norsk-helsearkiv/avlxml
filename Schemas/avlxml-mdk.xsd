@@ -80,11 +80,9 @@
       <xs:documentation>A-06</xs:documentation>
       <xs:documentation>En unik identifikator tildelt av Norsk helsearkiv ved inngåelse av avtale om
         avlevering. (OID-format).</xs:documentation>
-      <xs:documentation>For POV bruker inc-nummer</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <!-- AVTALEID dummy value for POV -->
-      <xs:pattern value="([0-9]+.)+([0-9]+)|AVTALEID"/>
+      <xs:pattern value="([0-9]+.)+([0-9]+)"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -364,7 +362,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <!-- POV -->
   <xs:simpleType name="spesialisthelsetjeneste">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.55</xs:documentation>
