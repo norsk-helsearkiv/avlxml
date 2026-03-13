@@ -47,6 +47,7 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 	`dokumenttypeKodeverk`).
 - `behandlendeAvdelingReshID` tillates tom i `relaxed`.
 - `saksnummer` tillates tom i `relaxed`.
+- `omsorgsnivaKodetekst` tillates tom i `relaxed`.
 - `dokumentdato` og `episodeSluttdato` tillates tom via typen `arkDATOvalgfri`
 	(ellers gyldig `arkDATO`).
 - I AVLSUP `diagnose` støttes både lowercase-feltnavn (`diagnosekode`, `diagnosedato` osv.),
@@ -74,6 +75,7 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 	- Gjeninnført obligatorisk `diagnosedato`, `forstekontakt` og `sistekontakt` i AVLXML.
 	- Tillatt tom `behandlendeAvdelingReshID` i AVLSUP metadata.
 	- Tillatt tom `saksnummer` i AVLSUP metadata.
+	- Tillatt tom `omsorgsnivaKodetekst` i AVLSUP metadata.
 	- Tillatt tom `dokumentdato` og `episodeSluttdato` via `arkDATOvalgfri`.
 	- Tillatt både lowercase- og camelCase-feltnavn for diagnose i AVLSUP.
 	- Harmonisert rekkefølge på diagnose-felter i AVLSUP med AVLXML.

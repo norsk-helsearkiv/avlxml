@@ -95,7 +95,7 @@
       <xs:documentation>N-02</xs:documentation>
       <xs:documentation>Tekst knyttet til omsorgsnivåkoden</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ikkeTom"/>
+    <xs:restriction base="xs:string"/>
   </xs:simpleType>
   <xs:simpleType name="omsorgsnivaKodeverk">
     <xs:annotation>
