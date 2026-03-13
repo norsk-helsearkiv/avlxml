@@ -41,11 +41,17 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 - `P-11 sikkermors` er modellert som indikator `0` eller `1`.
 - Feltrekkefølge i `virksomhet` og `pasientjournal` er bevisst beholdt i tråd med eksisterende v3-baserte implementasjoner.
 - I `Schemas/avlsup.xsd` støttes både `Organisasjon` (legacy) og `organisasjon` (foretrukket) i overgangsperiode.
+- I `Schemas/avlsup.xsd` for `diagnose` støttes både camelCase- og lowercase-feltnavn.
+- Rekkefølgen i `diagnose` er harmonisert mellom AVLXML og AVLSUP, men kardinalitet er ulik:
+	`diagnosekode` og `diagnosekodeverk` er valgfrie i AVLXML og obligatoriske i AVLSUP.
 
 ## Endringslogg (kort)
 
 - 2026-03-13
 	- Fjernet ubrukt type `spesialisthelsetjeneste` fra `Schemas/avlxml-mdk.xsd` i strict.
+	- Lagt til støtte for både camelCase- og lowercase-feltnavn i AVLSUP `diagnose`.
+	- Harmonisert rekkefølge på diagnose-felter mellom AVLXML og AVLSUP
+	  (med fortsatt ulik kardinalitet for kode/kodeverk).
 - 2026-03-12
 	- Låst `A-01 avlxmlversjon` til fast v4-OID `2.16.578.1.39.100.5.2.4`.
 	- Endret `sikkermors` til streng indikator (`0`/`1`).
