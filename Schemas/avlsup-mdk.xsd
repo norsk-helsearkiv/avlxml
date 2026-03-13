@@ -1,15 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--Created with Liquid Studio (Trial) (https://www.liquid-technologies.com)-->
 <xs:schema xmlns="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"
   elementFormDefault="qualified"
   targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlsup-mdk"
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <!-- 
-********************************************************************************    
-    AVLXML supplerende opplysninger metadatakatalog (avlxmlbsmdk.xsd)
-    Inngår i XML-skjema for avleveringsliste til Norsk helsearkiv
-******************************************************************************** 
--->
   <xs:simpleType name="dokumentdato">
     <xs:annotation>
       <xs:documentation>OID:2.16.578.1.39.100.1.3001.30</xs:documentation>

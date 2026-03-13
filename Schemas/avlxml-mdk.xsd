@@ -3,8 +3,6 @@
   elementFormDefault="qualified"
   targetNamespace="http://www.arkivverket.no/standarder/nha/avlxml/avlxml-mdk"
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <!-- AVLXML base metadatakatalog (avlxmlbmdk.xsd)-->
-  <!-- Inngår i XML-skjema for avleveringsliste til Norsk helsearkiv -->
 
   <xs:simpleType name="arkivskaper">
     <xs:annotation>
