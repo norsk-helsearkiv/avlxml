@@ -115,10 +115,22 @@
         dokumentet.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="diagnoseKode" type="avlmdk:diagnosekode" minOccurs="0"/>
-      <xs:element name="diagnoseKodetekst" type="avlmdk:diagnosetekst"/>
-      <xs:element name="diagnoseKodeverk" type="avlmdk:diagnosekodeverk" minOccurs="0"/>
-      <xs:element name="diagnoseDato" type="avlmdk:diagnosedato"/>
+      <xs:choice minOccurs="0">
+        <xs:element name="diagnoseKode" type="avlmdk:diagnosekode"/>
+        <xs:element name="diagnosekode" type="avlmdk:diagnosekode"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element name="diagnoseKodetekst" type="avlmdk:diagnosetekst"/>
+        <xs:element name="diagnosetekst" type="avlmdk:diagnosetekst"/>
+      </xs:choice>
+      <xs:choice minOccurs="0">
+        <xs:element name="diagnoseKodeverk" type="avlmdk:diagnosekodeverk"/>
+        <xs:element name="diagnosekodeverk" type="avlmdk:diagnosekodeverk"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element name="diagnoseDato" type="avlmdk:diagnosedato"/>
+        <xs:element name="diagnosedato" type="avlmdk:diagnosedato"/>
+      </xs:choice>
     </xs:sequence>
   </xs:complexType>
 
