@@ -45,6 +45,7 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 - Flere felt i AVLSUP er valgfrie i `relaxed` selv om de er obligatoriske i `strict`
 	(for eksempel `journalidentifikator`, `dokumentdato`, `dokumenttypeKode` og
 	`dokumenttypeKodeverk`).
+- `behandlendeAvdelingReshID` tillates tom i `relaxed`.
 - I AVLXML er `diagnosedato`, `forstekontakt` og `sistekontakt` beholdt obligatoriske
 	i tråd med TN20230619.
 
@@ -63,6 +64,7 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 	- Justert `organisasjonsnummer` i relaxed til `0`, 7 eller 9 siffer.
 	- Beholdt både `Organisasjon` og `organisasjon` i AVLSUP.
 	- Gjeninnført obligatorisk `diagnosedato`, `forstekontakt` og `sistekontakt` i AVLXML.
+	- Tillatt tom `behandlendeAvdelingReshID` i AVLSUP metadata.
 - 2026-03-12
 	- Låst `A-01 avlxmlversjon` til fast v4-OID `2.16.578.1.39.100.5.2.4`.
 	- Endret `sikkermors` til streng indikator (`0`/`1`).

@@ -45,7 +45,7 @@
       <xs:documentation>B-01</xs:documentation>
       <xs:documentation>RESH nummer</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ikkeTom"/>
+    <xs:restriction base="xs:string"/>
   </xs:simpleType>
   <xs:simpleType name="behandlendeAvdelingNavn">
     <xs:annotation>
