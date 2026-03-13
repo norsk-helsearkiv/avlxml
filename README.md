@@ -50,6 +50,8 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 - I AVLSUP `diagnose` støttes både lowercase-feltnavn (`diagnosekode`, `diagnosedato` osv.),
 	 som er historisk brukt og i tråd med AVLXML-delen, og camelCase-feltnavn
 	 (`diagnoseKode`, `diagnoseDato` osv.) fra v4-høringsutkastet.
+- Rekkefølgen i AVLSUP `diagnose` er harmonisert med AVLXML
+	(`diagnosedato` -> `diagnosekode` -> `diagnosetekst` -> `diagnosekodeverk`).
 - I AVLXML er `diagnosedato`, `forstekontakt` og `sistekontakt` beholdt obligatoriske
 	i tråd med TN20230619.
 
@@ -71,6 +73,7 @@ xmllint --noout --schema Schemas/avlsup.xsd sti/til/avlsup-fil.xml
 	- Tillatt tom `behandlendeAvdelingReshID` i AVLSUP metadata.
 	- Tillatt tom `saksnummer` i AVLSUP metadata.
 	- Tillatt både lowercase- og camelCase-feltnavn for diagnose i AVLSUP.
+	- Harmonisert rekkefølge på diagnose-felter i AVLSUP med AVLXML.
 - 2026-03-12
 	- Låst `A-01 avlxmlversjon` til fast v4-OID `2.16.578.1.39.100.5.2.4`.
 	- Endret `sikkermors` til streng indikator (`0`/`1`).
