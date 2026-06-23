@@ -3,3 +3,6 @@
 
 # Ignore test-avls
 avlxml*.xml
+
+# Ignore local docs
+_local_docs
